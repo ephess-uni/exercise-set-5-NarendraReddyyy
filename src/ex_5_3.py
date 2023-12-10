@@ -11,7 +11,7 @@ from argparse import ArgumentParser
 if __name__ == "__main__":
     parser = ArgumentParser(description="This program applies a standard scale transform to the data in infile and writes it to outfile.")
     parser.add_argument('infile',help = "provide input file path",nargs="?")
-    parser.ad_argument('outfile', help = "provide output file path",nargs="?")
+    parser.add_argument('outfile', help = "provide output file path",nargs="?")
     args = parser.parse_args()
     raw_data = np.loadtxt(args.infile)
     normed = (raw_data - raw_data.mean(axis=0)) / raw_data.std(axis=0)
